@@ -1,8 +1,26 @@
 [package]
-name = "pink-ng"
-version = "0.1.0"
+authors = ["Kowalski Dark <darkkowalski2012@gmail.com>"]
 edition = "2018"
+license = "GPL-3.0"
+name = "pink-ng"
+repository = "https://github.com/darkkowalski/pink-ng"
+version = "0.1.0"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = [
+  "client/executor",
+  "primitives/allocator",
+  "primitives/core",
+  "primitives/debug-derive",
+  "primitives/externalities",
+  "primitives/runtime-interface",
+  "primitives/sandbox",
+  "primitives/serializer",
+  "primitives/std",
+  "primitives/storage",
+  "primitives/tracing",
+  "primitives/version",
+  "primitives/wasm-interface",
+]
 
 [dependencies]

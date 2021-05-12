@@ -1,0 +1,34 @@
+[package]
+authors = ["Parity Technologies <admin@parity.io>"]
+description = "Runtime Modules shared primitive types."
+documentation = "https://docs.rs/sp-runtime"
+edition = "2018"
+homepage = "https://substrate.dev"
+license = "Apache-2.0"
+name = "sp-runtime"
+readme = "README.md"
+repository = "https://github.com/paritytech/substrate/"
+version = "3.0.0"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+serde = { version = "1.0.101", optional = true, features = ["derive"] }
+codec = {package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive"]}
+sp-core = {version = "3.0.0", default-features = false, path = "../core"}
+sp-std = {version = "3.0.0", default-features = false, path = "../std"}
+
+[dev-dependencies]
+sp-tracing = {version = "3.0.0", path = "../../primitives/tracing"}
+
+[features]
+bench = []
+default = ["std"]
+runtime-benchmarks = []
+std = [
+  "codec/std",
+  "sp-core/std",
+  "sp-std/std",
+  "serde",
+]

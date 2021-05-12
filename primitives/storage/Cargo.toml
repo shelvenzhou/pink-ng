@@ -1,0 +1,26 @@
+[package]
+authors = ["Parity Technologies <admin@parity.io>"]
+description = "Storage related primitives"
+documentation = "https://docs.rs/sp-storage/"
+edition = "2018"
+homepage = "https://substrate.dev"
+license = "Apache-2.0"
+name = "sp-storage"
+readme = "README.md"
+repository = "https://github.com/paritytech/substrate/"
+version = "3.0.0"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+codec = {package = "parity-scale-codec", version = "2.0.0", default-features = false, features = ["derive"]}
+impl-serde = {version = "0.3.1", optional = true}
+ref-cast = "1.0.0"
+serde = {version = "1.0.101", optional = true, features = ["derive"]}
+sp-debug-derive = {version = "3.0.0", path = "../debug-derive"}
+sp-std = {version = "3.0.0", default-features = false, path = "../std"}
+
+[features]
+default = ["std"]
+std = ["sp-std/std", "serde", "impl-serde", "codec/std"]

@@ -1,0 +1,19 @@
+[package]
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+homepage = "https://substrate.dev"
+license = "Apache-2.0"
+name = "sp-std"
+repository = "https://github.com/paritytech/substrate/"
+version = "3.0.0"
+
+description = "Lowest-abstraction level for the Substrate runtime: just exports useful primitives from std or client/alloc to be used with any code that depends on the runtime."
+documentation = "https://docs.rs/sp-std"
+readme = "README.md"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[features]
+default = ["std"]
+std = []
