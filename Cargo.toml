@@ -1,10 +1,10 @@
-[package]
-authors = ["Kowalski Dark <darkkowalski2012@gmail.com>"]
-edition = "2018"
-license = "GPL-3.0"
-name = "pink-ng"
-repository = "https://github.com/darkkowalski/pink-ng"
-version = "0.1.0"
+#[package]
+#authors = ["Kowalski Dark <darkkowalski2012@gmail.com>"]
+#edition = "2018"
+#license = "GPL-3.0"
+#name = "pink-ng"
+#repository = "https://github.com/darkkowalski/pink-ng"
+#version = "0.1.0"
 
 [workspace]
 members = [
@@ -13,6 +13,8 @@ members = [
   "primitives/core",
   "primitives/debug-derive",
   "primitives/externalities",
+  "primitives/maybe-compressed-blob",
+  "primitives/runtime",
   "primitives/runtime-interface",
   "primitives/sandbox",
   "primitives/serializer",
@@ -22,5 +24,3 @@ members = [
   "primitives/version",
   "primitives/wasm-interface",
 ]
-
-[dependencies]

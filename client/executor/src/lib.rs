@@ -31,21 +31,24 @@
 #![warn(missing_docs)]
 #![recursion_limit="128"]
 
+/*
 #[macro_use]
 mod native_executor;
 mod wasm_runtime;
+*/
+
 #[cfg(test)]
 mod integration_tests;
 
 pub use wasmi;
-pub use native_executor::{with_externalities_safe, NativeExecutor, WasmExecutor, NativeExecutionDispatch};
+// pub use native_executor::{with_externalities_safe, NativeExecutor, WasmExecutor, NativeExecutionDispatch};
 pub use sp_version::{RuntimeVersion, NativeVersion};
 pub use codec::Codec;
 #[doc(hidden)]
 pub use sp_core::traits::{Externalities, CallInWasm};
 #[doc(hidden)]
 pub use sp_wasm_interface;
-pub use wasm_runtime::WasmExecutionMethod;
+// pub use wasm_runtime::WasmExecutionMethod;
 
 pub use sc_executor_common::{error, sandbox};
 
@@ -62,6 +65,7 @@ pub trait RuntimeInfo {
 	) -> error::Result<RuntimeVersion>;
 }
 
+/*
 #[cfg(test)]
 mod tests {
 	use super::*;
@@ -93,3 +97,4 @@ mod tests {
 		assert_eq!(res, vec![0u8; 0]);
 	}
 }
+*/

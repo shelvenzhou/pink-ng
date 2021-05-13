@@ -403,6 +403,7 @@ fn create_versioned_wasm_runtime(
 	})
 }
 
+/*
 #[cfg(test)]
 mod tests {
 	use super::*;
@@ -464,3 +465,4 @@ mod tests {
 		assert_eq!(3, version.transaction_version);
 	}
 }
+*/
