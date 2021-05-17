@@ -1,0 +1,10 @@
+[package]
+authors = ["Kowalski Dark <darkkowalski2012@gmail.com>"]
+edition = "2018"
+license = "GPL-3.0"
+name = "test-executor"
+repository = "https://github.com/darkkowalski/pink-ng"
+version = "0.1.0"
+
+[dependencies]
+sc-executor = { path = "../client/executor" }
