@@ -42,7 +42,7 @@ use log::trace;
 use sp_wasm_interface::{HostFunctions, Function};
 use sc_executor_common::wasm_runtime::{WasmInstance, WasmModule, InvokeMethod};
 use sp_externalities::ExternalitiesExt as _;
-use sp_tasks::new_async_externalities;
+//use sp_tasks::new_async_externalities;
 
 /// Default num of pages for the heap
 const DEFAULT_HEAP_PAGES: u64 = 1024;
@@ -213,7 +213,7 @@ impl sp_core::traits::CallInWasm for WasmExecutor {
 				with_externalities_safe(
 					&mut **ext,
 					move || {
-						RuntimeInstanceSpawn::register_on_externalities(module.clone());
+						//RuntimeInstanceSpawn::register_on_externalities(module.clone());
 						instance.call_export(method, call_data)
 					}
 				)
@@ -239,7 +239,7 @@ impl sp_core::traits::CallInWasm for WasmExecutor {
 			with_externalities_safe(
 				&mut **ext,
 				move || {
-					RuntimeInstanceSpawn::register_on_externalities(module.clone());
+					// RuntimeInstanceSpawn::register_on_externalities(module.clone());
 					instance.call_export(method, call_data)
 				}
 			)
@@ -249,6 +249,7 @@ impl sp_core::traits::CallInWasm for WasmExecutor {
 	}
 }
 
+/*
 /// A generic `CodeExecutor` implementation that uses a delegate to determine wasm code equivalence
 /// and dispatch to native code when possible, falling back on `WasmExecutor` when not.
 pub struct NativeExecutor<D> {
@@ -645,6 +646,7 @@ macro_rules! native_executor_instance {
 	}
 }
 
+
 #[cfg(test)]
 mod tests {
 	use super::*;
@@ -681,3 +683,5 @@ mod tests {
 		my_interface::say_hello_world("hey");
 	}
 }
+
+*/

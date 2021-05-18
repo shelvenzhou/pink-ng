@@ -25,4 +25,5 @@ members = [
   "primitives/tracing",
   "primitives/version",
   "primitives/wasm-interface",
+  "test_executor"
 ]

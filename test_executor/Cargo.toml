@@ -7,4 +7,6 @@ repository = "https://github.com/darkkowalski/pink-ng"
 version = "0.1.0"
 
 [dependencies]
-sc-executor = { path = "../client/executor" }
+sc-executor = {path = "../client/executor"}
+sp-sandbox = {path = "../primitives/sandbox"}
+sp-wasm-interface = {path = "../primitives/wasm-interface"}
