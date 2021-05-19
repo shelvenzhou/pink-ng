@@ -1,9 +1,8 @@
-use sc_executor;
+use sc_executor::{self, CallInWasm};
 
-use sc_executor::{WasmExecutor, WasmExecutionMethod};
-use sp_wasm_interface::{HostFunctions, Function};
+use sc_executor::{WasmExecutionMethod, WasmExecutor};
 use sp_runtime_interface::runtime_interface;
-
+use sp_wasm_interface::{Function, HostFunctions};
 
 #[runtime_interface(no_tracing)]
 trait MyInterface {
@@ -13,14 +12,24 @@ trait MyInterface {
 }
 
 fn main() {
-
-    let wasm_method = WasmExecutionMethod::Interpreted;
-    let default_heap_pages = Some(17);
     let executor = WasmExecutor::new(
-        wasm_method,
-        default_heap_pages,
+        WasmExecutionMethod::Interpreted,
+        Some(17),
         my_interface::HostFunctions::host_functions(),
         8,
         None,
+    );
+
+
+    let wasm_binary: [u8; 10] = [0; 10];
+    let call_data: [u8; 1] = [0];
+
+    executor.call_in_wasm(
+        &wasm_binary,
+        None,
+        "my_function",
+        &call_data,
+        ,
+        sp_core::traits::MissingHostFunctions::Allow,
     );
 }
