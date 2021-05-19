@@ -9,4 +9,11 @@ version = "0.1.0"
 [dependencies]
 sc-executor = {path = "../client/executor"}
 sp-sandbox = {path = "../primitives/sandbox"}
+sp-runtime-interface = {path = "../primitives/runtime-interface"}
 sp-wasm-interface = {path = "../primitives/wasm-interface"}
+
+[features]
+default = [ "std" ]
+std = [
+    "sp-wasm-interface/std",
+]

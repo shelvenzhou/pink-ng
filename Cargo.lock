@@ -2149,6 +2149,7 @@ name = "test-executor"
 version = "0.1.0"
 dependencies = [
  "sc-executor",
+ "sp-runtime-interface",
  "sp-sandbox",
  "sp-wasm-interface",
 ]
