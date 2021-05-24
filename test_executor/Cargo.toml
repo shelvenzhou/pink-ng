@@ -1,5 +1,6 @@
 [package]
 authors = ["Kowalski Dark <darkkowalski2012@gmail.com>"]
+build = "build.rs"
 edition = "2018"
 license = "GPL-3.0"
 name = "test-executor"
@@ -8,17 +9,20 @@ version = "0.1.0"
 
 [dependencies]
 sc-executor = {path = "../client/executor"}
-sp-sandbox = {path = "../primitives/sandbox"}
-sp-runtime-interface = {path = "../primitives/runtime-interface"}
-sp-wasm-interface = {path = "../primitives/wasm-interface"}
 sp-core = {path = "../primitives/core"}
-sp-storage = {path = "../primitives/storage"}
 sp-externalities = {path = "../primitives/externalities"}
+sp-runtime-interface = {path = "../primitives/runtime-interface"}
+sp-sandbox = {path = "../primitives/sandbox"}
+sp-storage = {path = "../primitives/storage"}
+sp-wasm-interface = {path = "../primitives/wasm-interface"}
+
+[build-dependencies]
+substrate-wasm-builder = {path = "../utils/wasm-builder"}
 
 [features]
-default = [ "std" ]
+default = ["std"]
 std = [
-    "sp-wasm-interface/std",
-    "sp-core/std",
-    "sp-storage/std",
+  "sp-wasm-interface/std",
+  "sp-core/std",
+  "sp-storage/std",
 ]

@@ -185,22 +185,27 @@ impl sp_externalities::ExtensionStore for TestExternalities {
 	}
 }
 
+#[cfg(feature = "std")]
+include!(concat!(env!("OUT_DIR"), "/wasm_binary.rs"));
+
 fn main() {
     let executor = WasmExecutor::new(
         WasmExecutionMethod::Interpreted,
-        Some(0),
+        Some(8),
         my_interface::HostFunctions::host_functions(),
         8,
         None,
     );
 
-    let wasm_binary: [u8; 10] = [0; 10];
-    let call_data: [u8; 1] = [0];
+    let wasm_binary= include_bytes!("../res/fixtures/simple.wasm");
+    let call_data: [u8; 2] = [0, 1];
+
+	// println!("{:?}", &wasm_binary[..]);
 
     match executor.call_in_wasm(
-		include_bytes!("../res/fixtures/.wasm"),
+		wasm_binary,
         None,
-        "my_function",
+        "answer",
         &call_data,
         &mut TestExternalities::new(),
         sp_core::traits::MissingHostFunctions::Allow,
