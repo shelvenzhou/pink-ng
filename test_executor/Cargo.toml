@@ -12,10 +12,13 @@ sp-sandbox = {path = "../primitives/sandbox"}
 sp-runtime-interface = {path = "../primitives/runtime-interface"}
 sp-wasm-interface = {path = "../primitives/wasm-interface"}
 sp-core = {path = "../primitives/core"}
+sp-storage = {path = "../primitives/storage"}
+sp-externalities = {path = "../primitives/externalities"}
 
 [features]
 default = [ "std" ]
 std = [
     "sp-wasm-interface/std",
     "sp-core/std",
+    "sp-storage/std",
 ]

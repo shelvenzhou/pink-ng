@@ -2150,8 +2150,10 @@ version = "0.1.0"
 dependencies = [
  "sc-executor",
  "sp-core",
+ "sp-externalities",
  "sp-runtime-interface",
  "sp-sandbox",
+ "sp-storage",
  "sp-wasm-interface",
 ]
 
