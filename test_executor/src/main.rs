@@ -188,7 +188,7 @@ impl sp_externalities::ExtensionStore for TestExternalities {
 fn main() {
     let executor = WasmExecutor::new(
         WasmExecutionMethod::Interpreted,
-        Some(17),
+        Some(0),
         my_interface::HostFunctions::host_functions(),
         8,
         None,
@@ -197,12 +197,15 @@ fn main() {
     let wasm_binary: [u8; 10] = [0; 10];
     let call_data: [u8; 1] = [0];
 
-    executor.call_in_wasm(
-        &wasm_binary,
+    match executor.call_in_wasm(
+		include_bytes!("../res/fixtures/.wasm"),
         None,
         "my_function",
         &call_data,
         &mut TestExternalities::new(),
         sp_core::traits::MissingHostFunctions::Allow,
-    );
+    ) {
+        Ok(_) => (),
+        Err(e) => panic!("Error: {}", e)
+    }
 }
