@@ -18,8 +18,8 @@ codec = {package = "parity-scale-codec", version = "2.0.0", default-features = f
 impl-serde = {version = "0.3.1", optional = true}
 ref-cast = "1.0.0"
 serde = {version = "1.0.101", optional = true, features = ["derive"]}
-sp-debug-derive = {version = "3.0.0", path = "../debug-derive"}
-sp-std = {version = "3.0.0", default-features = false, path = "../std"}
+sp-debug-derive = {version = "3.0.0", path = "../debug-derive"}         # NOTICE: port this
+sp-std = {version = "3.0.0", default-features = false, path = "../std"} # NOTICE: port this
 
 [features]
 default = ["std"]

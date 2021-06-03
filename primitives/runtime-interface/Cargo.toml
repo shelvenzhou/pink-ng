@@ -17,18 +17,18 @@ targets = ["x86_64-unknown-linux-gnu"]
 codec = {package = "parity-scale-codec", version = "2.0.0", default-features = false}
 impl-trait-for-tuples = "0.2.1"
 primitive-types = {version = "0.9.0", default-features = false}
-sp-externalities = {version = "0.9.0", optional = true, path = "../externalities"}
+sp-externalities = {version = "0.9.0", optional = true, path = "../externalities"}            # NOTICE: port this
 sp-runtime-interface-proc-macro = {version = "3.0.0", path = "proc-macro"}
-sp-std = {version = "3.0.0", default-features = false, path = "../std"}
-sp-storage = {version = "3.0.0", default-features = false, path = "../storage"}
-sp-tracing = {version = "3.0.0", default-features = false, path = "../tracing"}
-sp-wasm-interface = {version = "3.0.0", path = "../wasm-interface", default-features = false}
+sp-std = {version = "3.0.0", default-features = false, path = "../std"}                       # NOTICE: port this
+sp-storage = {version = "3.0.0", default-features = false, path = "../storage"}               # NOTICE: port this
+sp-tracing = {version = "3.0.0", default-features = false, path = "../tracing"}               # NOTICE: port this
+sp-wasm-interface = {version = "3.0.0", path = "../wasm-interface", default-features = false} # NOTICE: port this
 static_assertions = "1.0.0"
 
 [dev-dependencies]
 # sp-runtime-interface-test-wasm = { version = "2.0.0", path = "test-wasm" }
 # sp-state-machine = { version = "0.9.0", path = "../state-machine" }
-sp-core = {version = "3.0.0", path = "../core"}
+sp-core = {version = "3.0.0", path = "../core"}                                                # NOTICE: port this
 # sp-io = { version = "3.0.0", path = "../io" }
 rustversion = "1.0.0"
 trybuild = "1.0.38"

@@ -8,14 +8,9 @@
 
 [workspace]
 members = [
-  "client/executor",
-  "primitives/allocator",
-  "primitives/api",
   "primitives/core",
   "primitives/debug-derive",
   "primitives/externalities",
-  "primitives/maybe-compressed-blob",
-  "primitives/panic-handler",
   "primitives/runtime",
   "primitives/runtime-interface",
   "primitives/sandbox",
@@ -25,5 +20,4 @@ members = [
   "primitives/tracing",
   "primitives/version",
   "primitives/wasm-interface",
-  "test_executor"
 ]

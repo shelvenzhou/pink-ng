@@ -14,10 +14,10 @@ targets = ["x86_64-unknown-linux-gnu"]
 
 [dependencies]
 codec = {package = "parity-scale-codec", version = "2.0.0", default-features = false}
-sp-core = {version = "3.0.0", default-features = false, path = "../core"}
+sp-core = {version = "3.0.0", default-features = false, path = "../core"}                     # NOTICE: port this
 # sp-io = {version = "3.0.0", default-features = false, path = "../io"}
-sp-std = {version = "3.0.0", default-features = false, path = "../std"}
-sp-wasm-interface = {version = "3.0.0", default-features = false, path = "../wasm-interface"}
+sp-std = {version = "3.0.0", default-features = false, path = "../std"}                       # NOTICE: port this
+sp-wasm-interface = {version = "3.0.0", default-features = false, path = "../wasm-interface"} # NOTICE: port this
 wasmi = {version = "0.6.2", optional = true}
 
 [dev-dependencies]
