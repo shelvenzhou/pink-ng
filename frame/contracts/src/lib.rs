@@ -88,21 +88,22 @@
 #![cfg_attr(feature = "runtime-benchmarks", recursion_limit="512")]
 
 #[macro_use]
-mod gas;
-mod storage;
+//mod gas;
+//mod storage;
 mod exec;
 mod wasm;
-mod rent;
-mod benchmarking;
-mod schedule;
-mod migration;
+//mod rent;
+//mod benchmarking;
+//mod schedule;
+//mod migration;
 
-pub mod chain_extension;
-pub mod weights;
+//pub mod chain_extension;
+//pub mod weights;
 
-#[cfg(test)]
-mod tests;
+//#[cfg(test)]
+//mod tests;
 
+/*
 pub use crate::{pallet::*, schedule::Schedule, exec::Frame};
 use crate::{
 	gas::GasMeter,
@@ -129,7 +130,6 @@ use pallet_contracts_primitives::{
 	RentProjectionResult, GetStorageResult, ContractAccessError, ContractExecResult,
 	ContractInstantiateResult, Code, InstantiateReturnValue,
 };
-
 type CodeHash<T> = <T as frame_system::Config>::Hash;
 type TrieId = Vec<u8>;
 type BalanceOf<T> =
@@ -836,3 +836,4 @@ where
 		self::wasm::reinstrument(module, schedule)
 	}
 }
+*/
