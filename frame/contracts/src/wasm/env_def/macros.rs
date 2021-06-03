@@ -212,6 +212,7 @@ macro_rules! define_env {
 	};
 }
 
+/*
 #[cfg(test)]
 mod tests {
 	use parity_wasm::elements::FunctionType;
@@ -355,3 +356,4 @@ mod tests {
 		);
 	}
 }
+*/

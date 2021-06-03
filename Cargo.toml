@@ -8,6 +8,7 @@
 
 [workspace]
 members = [
+  "frame/contracts",
   "primitives/core",
   "primitives/debug-derive",
   "primitives/externalities",

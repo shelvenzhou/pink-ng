@@ -26,16 +26,16 @@ rand = { version = "0.8", optional = true, default-features = false }
 rand_pcg = { version = "0.3", optional = true }
 
 # Substrate Dependencies
-frame-benchmarking = { version = "3.1.0", default-features = false, path = "../benchmarking", optional = true }
-frame-support = { version = "3.0.0", default-features = false, path = "../support" }
-frame-system = { version = "3.0.0", default-features = false, path = "../system" }
+# frame-benchmarking = { version = "3.1.0", default-features = false, path = "../benchmarking", optional = true }
+# frame-support = { version = "3.0.0", default-features = false, path = "../support" }
+# frame-system = { version = "3.0.0", default-features = false, path = "../system" }
 pallet-contracts-primitives = { version = "3.0.0", default-features = false, path = "common" }
 pallet-contracts-proc-macro = { version = "3.0.0", path = "proc-macro" }
-sp-core = { version = "3.0.0", default-features = false, path = "../../primitives/core" }
-sp-io = { version = "3.0.0", default-features = false, path = "../../primitives/io" }
-sp-runtime = { version = "3.0.0", default-features = false, path = "../../primitives/runtime" }
-sp-sandbox = { version = "0.9.0", default-features = false, path = "../../primitives/sandbox" }
-sp-std = { version = "3.0.0", default-features = false, path = "../../primitives/std" }
+sp-core = { version = "3.0.0", default-features = false, path = "../../primitives/core" }         # NOTICE: port this
+# sp-io = { version = "3.0.0", default-features = false, path = "../../primitives/io" }
+sp-runtime = { version = "3.0.0", default-features = false, path = "../../primitives/runtime" }   # NOTICE: port this
+sp-sandbox = { version = "0.9.0", default-features = false, path = "../../primitives/sandbox" }   # NOTICE: port this
+sp-std = { version = "3.0.0", default-features = false, path = "../../primitives/std" }           # NOTICE: port this
 
 [dev-dependencies]
 assert_matches = "1"
@@ -45,9 +45,9 @@ pretty_assertions = "0.7"
 wat = "1"
 
 # Substrate Dependencies
-pallet-balances = { version = "3.0.0", path = "../balances" }
-pallet-timestamp = { version = "3.0.0", path = "../timestamp" }
-pallet-randomness-collective-flip = { version = "3.0.0", path = "../randomness-collective-flip" }
+# pallet-balances = { version = "3.0.0", path = "../balances" }
+# pallet-timestamp = { version = "3.0.0", path = "../timestamp" }
+# pallet-randomness-collective-flip = { version = "3.0.0", path = "../randomness-collective-flip" }
 
 [features]
 default = ["std"]
@@ -56,11 +56,11 @@ std = [
 	"codec/std",
 	"sp-core/std",
 	"sp-runtime/std",
-	"sp-io/std",
+#	"sp-io/std",
 	"sp-std/std",
 	"sp-sandbox/std",
-	"frame-support/std",
-	"frame-system/std",
+#	"frame-support/std",
+#	"frame-system/std",
 	"parity-wasm/std",
 	"pwasm-utils/std",
 	"wasmi-validation/std",
@@ -69,8 +69,10 @@ std = [
 	"log/std",
 ]
 runtime-benchmarks = [
-	"frame-benchmarking",
-	"rand",
-	"rand_pcg",
+#	"frame-benchmarking",
+#	"rand",
+#	"rand_pcg",
 ]
-try-runtime = ["frame-support/try-runtime"]
+try-runtime = [
+	#"frame-support/try-runtime"
+]

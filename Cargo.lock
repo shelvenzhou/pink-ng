@@ -429,6 +429,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "diff"
+version = "0.1.12"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0e25ea47919b1560c4e3b7fe0aaab9becf5b84a10325ddf7db0f0ba5e1026499"
+
+[[package]]
 name = "difference"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1037,6 +1043,53 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-contracts"
+version = "3.0.0"
+dependencies = [
+ "assert_matches",
+ "hex-literal",
+ "log",
+ "pallet-contracts-primitives",
+ "pallet-contracts-proc-macro",
+ "parity-scale-codec",
+ "parity-wasm 0.42.2",
+ "paste",
+ "pretty_assertions 0.7.2",
+ "pwasm-utils",
+ "rand 0.8.3",
+ "rand_pcg 0.3.0",
+ "serde",
+ "smallvec",
+ "sp-core",
+ "sp-runtime",
+ "sp-sandbox",
+ "sp-std",
+ "wasmi-validation 0.4.0",
+ "wat",
+]
+
+[[package]]
+name = "pallet-contracts-primitives"
+version = "3.0.0"
+dependencies = [
+ "bitflags",
+ "parity-scale-codec",
+ "serde",
+ "sp-core",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
+name = "pallet-contracts-proc-macro"
+version = "3.0.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "parity-scale-codec"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1092,6 +1145,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ddfc878dac00da22f8f61e7af3157988424567ab01d9920b962ef7dcbd7cd865"
 
 [[package]]
+name = "parity-wasm"
+version = "0.42.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be5e13c266502aadf83426d87d81a0f5d1ef45b8027f5a471c360abfe4bfae92"
+
+[[package]]
 name = "parking_lot"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1139,6 +1198,12 @@ dependencies = [
  "smallvec",
  "winapi",
 ]
+
+[[package]]
+name = "paste"
+version = "1.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "acbf547ad0c65e31259204bd90935776d1c693cec2f4ff7abb7a1bbbd40dfe58"
 
 [[package]]
 name = "pbkdf2"
@@ -1218,6 +1283,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "pretty_assertions"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1cab0e7c02cf376875e9335e0ba1da535775beb5450d21e1dffca068818ed98b"
+dependencies = [
+ "ansi_term 0.12.1",
+ "ctor",
+ "diff",
+ "output_vt100",
+]
+
+[[package]]
 name = "primitive-types"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1270,6 +1347,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "pwasm-utils"
+version = "0.17.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "78778a25194f953d1766fc8c6a331ed56f070d09a0511267ee2c150cb71ea8c2"
+dependencies = [
+ "byteorder",
+ "log",
+ "parity-wasm 0.42.2",
+]
+
+[[package]]
 name = "quote"
 version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1295,7 +1383,7 @@ dependencies = [
  "rand_chacha 0.2.2",
  "rand_core 0.5.1",
  "rand_hc",
- "rand_pcg",
+ "rand_pcg 0.2.1",
 ]
 
 [[package]]
@@ -1363,6 +1451,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "16abd0c1b639e9eb4d7c50c0b8100b0d0f849be2349829c740fe8e6eb4816429"
 dependencies = [
  "rand_core 0.5.1",
+]
+
+[[package]]
+name = "rand_pcg"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7de198537002b913568a3847e53535ace266f93526caf5c360ec41d72c5787f0"
+dependencies = [
+ "rand_core 0.6.2",
 ]
 
 [[package]]
@@ -1669,7 +1766,7 @@ dependencies = [
  "parity-scale-codec",
  "parity-util-mem",
  "parking_lot 0.11.1",
- "pretty_assertions",
+ "pretty_assertions 0.6.1",
  "primitive-types",
  "rand 0.7.3",
  "rand_chacha 0.2.2",
@@ -2218,8 +2315,8 @@ dependencies = [
  "memory_units",
  "num-rational",
  "num-traits",
- "parity-wasm",
- "wasmi-validation",
+ "parity-wasm 0.41.0",
+ "wasmi-validation 0.3.0",
 ]
 
 [[package]]
@@ -2228,7 +2325,16 @@ version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ea78c597064ba73596099281e2f4cfc019075122a65cdda3205af94f0b264d93"
 dependencies = [
- "parity-wasm",
+ "parity-wasm 0.41.0",
+]
+
+[[package]]
+name = "wasmi-validation"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a2eb8e860796d8be48efef530b60eebf84e74a88bce107374fffb0da97d504b8"
+dependencies = [
+ "parity-wasm 0.42.2",
 ]
 
 [[package]]

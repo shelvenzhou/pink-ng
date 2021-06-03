@@ -33,12 +33,13 @@ use crate::{
 use sp_std::prelude::*;
 use sp_core::crypto::UncheckedFrom;
 use codec::{Encode, Decode};
-use frame_support::dispatch::DispatchError;
+//use frame_support::dispatch::DispatchError;
 pub use self::runtime::{ReturnCode, Runtime, RuntimeCosts};
-#[cfg(feature = "runtime-benchmarks")]
-pub use self::code_cache::reinstrument;
-#[cfg(test)]
-pub use tests::MockExt;
+
+// #[cfg(feature = "runtime-benchmarks")]
+// pub use self::code_cache::reinstrument;
+// #[cfg(test)]
+// pub use tests::MockExt;
 
 /// A prepared wasm module ready for execution.
 ///
@@ -230,6 +231,8 @@ where
 		self.refcount as u32
 	}
 }
+
+/*
 
 #[cfg(test)]
 mod tests {
@@ -1846,3 +1849,4 @@ mod tests {
 		assert_eq!(output, ExecReturnValue { flags: ReturnFlags::empty(), data: rent_params });
 	}
 }
+*/
