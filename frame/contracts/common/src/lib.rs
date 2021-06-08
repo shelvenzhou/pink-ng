@@ -1,7 +1,7 @@
 use bitflags::bitflags;
 use codec::{Decode, Encode};
 use sp_core::Bytes;
-use sp_runtime::{DispatchError};
+pub use sp_runtime::{DispatchError};
 use sp_std::prelude::*;
 
 #[cfg(feature = "std")]

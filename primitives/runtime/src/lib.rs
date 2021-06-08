@@ -67,6 +67,12 @@ pub enum DispatchError {
 	Arithmetic(ArithmeticError),
 }
 
+impl From<&'static str> for DispatchError {
+	fn from(err: &'static str) -> DispatchError {
+		Self::Other(err)
+	}
+}
+
 impl PartialEq for DispatchError {
 	fn eq(&self, other: &Self) -> bool {
 		use DispatchError::*;

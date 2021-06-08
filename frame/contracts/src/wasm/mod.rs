@@ -1,3 +1,8 @@
+#[macro_use]
+mod env_def;
+mod runtime;
+
+pub use self::runtime::{ReturnCode, Runtime, RuntimeCosts};
 
 /*
 impl<T: Config> Executable<T> for PrefabWasmModule<T>

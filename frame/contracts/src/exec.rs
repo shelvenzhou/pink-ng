@@ -1,6 +1,6 @@
 
 use pallet_contracts_primitives::{ExecReturnValue};
-use sp_runtime::{DispatchError};
+pub use sp_runtime::{DispatchError};
 
 pub type ContractKey = u64;
 pub type StorageKey = [u8; 32];
@@ -24,6 +24,15 @@ pub struct ExecError {
 	pub error: DispatchError,
 	/// Origin of the error.
 	pub origin: ErrorOrigin,
+}
+
+impl<T: Into<DispatchError>> From<T> for ExecError {
+    fn from(error: T) -> Self {
+        Self {
+            error: error.into(),
+            origin: ErrorOrigin::Caller,
+        }
+    }
 }
 
 #[derive(Clone, Copy, PartialEq)]
