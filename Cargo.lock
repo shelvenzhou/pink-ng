@@ -850,6 +850,9 @@ name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+dependencies = [
+ "spin",
+]
 
 [[package]]
 name = "leb128"
@@ -1048,16 +1051,14 @@ version = "3.0.0"
 dependencies = [
  "assert_matches",
  "hex-literal",
+ "lazy_static",
  "log",
  "pallet-contracts-primitives",
- "pallet-contracts-proc-macro",
  "parity-scale-codec",
  "parity-wasm 0.42.2",
  "paste",
  "pretty_assertions 0.7.2",
  "pwasm-utils",
- "rand 0.8.3",
- "rand_pcg 0.3.0",
  "serde",
  "smallvec",
  "sp-core",
@@ -1078,15 +1079,6 @@ dependencies = [
  "sp-core",
  "sp-runtime",
  "sp-std",
-]
-
-[[package]]
-name = "pallet-contracts-proc-macro"
-version = "3.0.0"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
 ]
 
 [[package]]
@@ -1383,7 +1375,7 @@ dependencies = [
  "rand_chacha 0.2.2",
  "rand_core 0.5.1",
  "rand_hc",
- "rand_pcg 0.2.1",
+ "rand_pcg",
 ]
 
 [[package]]
@@ -1451,15 +1443,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "16abd0c1b639e9eb4d7c50c0b8100b0d0f849be2349829c740fe8e6eb4816429"
 dependencies = [
  "rand_core 0.5.1",
-]
-
-[[package]]
-name = "rand_pcg"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7de198537002b913568a3847e53535ace266f93526caf5c360ec41d72c5787f0"
-dependencies = [
- "rand_core 0.6.2",
 ]
 
 [[package]]
@@ -1926,6 +1909,12 @@ dependencies = [
  "sp-std",
  "wasmi",
 ]
+
+[[package]]
+name = "spin"
+version = "0.5.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
 
 [[package]]
 name = "static_assertions"
